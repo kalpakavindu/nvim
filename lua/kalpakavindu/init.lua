@@ -11,10 +11,10 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Diagnostics on hover
 vim.o.updatetime = 250
 autocmd({ "CursorHold", "CursorHoldI" }, {
-	group = MY_GRP,
-	callback = function()
-		vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
-	end,
+  group = MY_GRP,
+  callback = function()
+    vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
+  end,
 })
 
 vim.g.netrw_browse_split = 0

@@ -1,37 +1,39 @@
 vim.g.mapleader = " "
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+local M = vim.opt;
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+M.nu = true
+M.relativenumber = true
 
-vim.opt.smartindent = true
+M.tabstop = 2
+M.softtabstop = 2
+M.shiftwidth = 2
+M.expandtab = true
 
-vim.opt.wrap = true
+M.smartindent = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
+M.wrap = true
+
+M.swapfile = false
+M.backup = false
 
 if os.getenv("HOME") == nil then
-  vim.opt.undodir = os.getenv("USERPROFILE") .. "/.vim/undodir"
+  M.undodir = os.getenv("USERPROFILE") .. "/.vim/undodir"
 else
-  vim.opt.undodir = os.getenv('HOME') .. "/.vim/undodir"
+  M.undodir = os.getenv('HOME') .. "/.vim/undodir"
 end
 
-vim.opt.undofile = true
+M.undofile = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+M.hlsearch = false
+M.incsearch = true
 
-vim.opt.termguicolors = true
+M.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+M.scrolloff = 8
+M.signcolumn = "yes"
+M.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+M.updatetime = 50
 
-vim.opt.colorcolumn = "120"
+M.colorcolumn = "120"
