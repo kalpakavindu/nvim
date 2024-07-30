@@ -1,4 +1,4 @@
-return function ()
+return function()
   require("conform").setup({
     formatters_by_ft = {
       lua = { "stylua" },
@@ -7,8 +7,9 @@ return function ()
       typescript = { "prettierd" },
       javascript = { "prettierd" },
       cpp = { "clang-format" },
+      markdown = { "markdownlint" },
       c = { "clang-format" },
-      ["*"] = { }, -- For all file types
+      ["*"] = {}, -- For all file types
       ["_"] = { "trim_whitespaces" },
     },
     default_format_opts = {

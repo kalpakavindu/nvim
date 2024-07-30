@@ -4,6 +4,10 @@ return {
     name = "plenary",
   },
   {
+    "nvim-tree/nvim-web-devicons",
+    config = require("kalpakavindu.config.icons"),
+  },
+  {
     "olexsmir/gopher.nvim",
     ft = "go",
     config = require("kalpakavindu.config.gopher"),
