@@ -1,4 +1,24 @@
-require("telescope").setup({})
+require("telescope").setup({
+	defaults = {
+		file_ignore_patterns = {
+			"lazy%-lock%.json",
+			"package%-lock%.json",
+			"pnpm%-lock%.yaml",
+			"yarn%.lock",
+			"node_modules/",
+			"build/",
+			"log/",
+			"temp/",
+			"tmp/",
+			"%.vs/",
+			"%.idea/",
+			"%.vscode/",
+			"%.next/",
+			"%.nuxt/",
+			"%.git/",
+		},
+	},
+})
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
