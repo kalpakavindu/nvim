@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-local M = vim.opt;
+local M = vim.opt
 
 M.nu = true
 M.relativenumber = true
@@ -18,9 +18,9 @@ M.swapfile = false
 M.backup = false
 
 if os.getenv("HOME") == nil then
-  M.undodir = os.getenv("USERPROFILE") .. "/.vim/undodir"
+	M.undodir = os.getenv("USERPROFILE") .. "/.vim/undodir"
 else
-  M.undodir = os.getenv('HOME') .. "/.vim/undodir"
+	M.undodir = os.getenv("HOME") .. "/.vim/undodir"
 end
 
 M.undofile = true
@@ -37,3 +37,19 @@ M.isfname:append("@-@")
 M.updatetime = 50
 
 M.colorcolumn = "120"
+
+vim.diagnostic.config({
+	virtual_text = true,
+	signs = true,
+	underline = true,
+	severity_sort = false,
+	undate_in_insert = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
+})
