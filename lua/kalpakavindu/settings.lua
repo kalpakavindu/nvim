@@ -12,7 +12,7 @@ M.expandtab = true
 
 M.smartindent = true
 
-M.wrap = true
+M.wrap = false
 
 M.swapfile = false
 M.backup = false
