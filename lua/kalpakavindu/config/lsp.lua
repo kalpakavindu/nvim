@@ -1,4 +1,5 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lsp_on_attach = function(_, buf)
 	vim.bo[buf].omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -27,6 +28,15 @@ require("mason").setup({
 		"mason.providers.client",
 		"mason.providers.registry-api",
 	},
+	ui = {
+		icons = {
+			package_pending = " ",
+			package_installed = " ",
+			package_uninstalled = " ",
+		},
+	},
+
+	max_concurrent_installers = 10,
 })
 
 local cmp = require("cmp")
@@ -53,7 +63,7 @@ cmp.setup({
 })
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "gopls", "cmake", "tsserver", "typos_lsp" },
+	ensure_installed = { "lua_ls", "clangd", "gopls", "cmake", "tsserver", "typos_lsp", "cssls" },
 	handlers = {
 		-- default handler
 		function(server_name)
@@ -112,6 +122,19 @@ require("mason-lspconfig").setup({
 							globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
 						},
 					},
+				},
+			})
+		end,
+
+		["cssls"] = function()
+			require("lspconfig").cssls.setup({
+				on_attach = lsp_on_attach,
+				capabilities = capabilities,
+				filetypes = { "css", "less", "scss" },
+				settings = {
+					css = { validate = true },
+					less = { validate = true },
+					scss = { validate = true },
 				},
 			})
 		end,

@@ -6,9 +6,11 @@ require("kalpakavindu.remap")
 require("kalpakavindu.config.icons")
 require("kalpakavindu.config.telescope")
 require("kalpakavindu.config.treesitter")
+require("kalpakavindu.config.nvim-tree")
 require("kalpakavindu.config.lsp")
 require("kalpakavindu.config.snippets")
 require("kalpakavindu.config.formatting")
+require("kalpakavindu.config.dap")
 require("kalpakavindu.config.gopher")
 require("kalpakavindu.config.comment")
 require("kalpakavindu.config.lualine")
@@ -29,7 +31,3 @@ autocmd({ "CursorHold", "CursorHoldI" }, {
 		vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
 	end,
 })
-
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
